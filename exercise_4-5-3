@@ -1,0 +1,8 @@
+import pandas as pd 
+
+table = pd.read_csv(r'Pandas\flights_task.csv')
+df = pd.DataFrame(table)
+
+df['Dig_Change'] = df['DEP'].max() - df['DEP'].min()
+
+print(df['Dig_Change'][0])

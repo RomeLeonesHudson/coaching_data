@@ -1,0 +1,17 @@
+import pandas as pd
+sex = pd.Series(['Women', 'Women', 'Women', 'Women', 'Women', 'Women'])
+race = pd.Series(['Asian', 'Asian', 'Asian', 'Black', 'Black', 'Black'])
+age = pd.Series(['16-24', '25-54', '>=55', '16-24', '25-54', '>=55'])
+persons = pd.Series([187000, 2449000, 648000, 624000, 5399000, 1490000])
+earning = pd.Series([833, 1165, 958, 559, 802, 853])
+
+data = {'sex':sex, 
+        'race':race, 
+        'age':age, 
+        'n_persons':persons, 
+        'earning':earning}
+
+df = pd.DataFrame(data)
+print(df)
+print(df['sex'])
+print(df['sex'][0])

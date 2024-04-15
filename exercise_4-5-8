@@ -1,0 +1,7 @@
+import pandas as pd 
+
+table = pd.read_csv(r'Pandas\flights_task.csv')
+df = pd.DataFrame(table)
+df['last_num'] = (df['DATE'].str.endswith('01')).sum()
+
+print(df['last_num'][0])

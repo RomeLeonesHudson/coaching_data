@@ -1,0 +1,6 @@
+import pandas as pd
+
+data = pd.read_csv('Pandas/us_earnings.csv', sep = ',')
+
+data1 = pd.read_csv(r'Pandas\us_earnings_women.txt', sep = '\t')
+print(data1)

@@ -1,0 +1,13 @@
+import pandas as pd
+
+table_1 = pd.read_csv(r'Pandas\flights_task.csv')
+df = pd.DataFrame(table_1)
+
+#print(table_1)
+airport_France = df[(df['STATE'] == 'France') & ((df['MONTH'] == 'JUN') | (df['MONTH'] == 'JUL') | (df['MONTH'] == 'AUG'))]
+the_size = airport_France.size #Посчитате количество еолонок * строки, получим сколько всего ячеек
+row_col = airport_France.shape
+#for i in col_row:
+	#print(i)
+	# У нас есть 2 числа, выведет сначала первое - строки, потом 2 - колонки / или можно вывести число под индексом print(i[0]), print(i[1])
+print(row_col[0])

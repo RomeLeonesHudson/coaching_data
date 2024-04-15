@@ -1,0 +1,10 @@
+import pandas as pd 
+
+table = pd.read_csv(r'Pandas\flights_task.csv')
+df = pd.DataFrame(table)
+
+df[['year','month','day']] = df['DATE'].str.split('-', expand = True)
+df['int_day'] = (df['day'].astype(int)).sum()
+
+#print(df.head(25))
+print(df['int_day'][0])

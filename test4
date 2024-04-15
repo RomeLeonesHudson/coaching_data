@@ -1,0 +1,20 @@
+import pandas as pd 
+
+table = pd.read_csv(r'Pandas\flights_task.csv')
+df = pd.DataFrame(table)
+
+df['total'] = df['ARR'] + df['DEP']
+print(df['total'])
+print(df.head(10))#выведет колонку total
+
+df['sum_cols'] = df[['ARR', 'DEP']].sum(axis = 1)#складывает значение ячейки столбца со значением ячейки второго столбца на одной строке
+df['mid_value'] = df[['ARR', 'DEP']].mean(axis = 1)
+df[['%_from_ARR', '%_from_DEP']] = df[['ARR', 'DEP']].div(df['total'], axis = 0)#здесь колонки из 1 части должны быть равны колонкам из 2 частиб если в начале 1 колонка, а в конце 2 - выдаст ошибку
+
+df['DATE'] = pd.to_datetime(df['DATE'])#метод перевода типа данных
+print(df['DATE'].dtype)
+df['YEAR'] = df['YEAR'].astype(str)#метод перевода типа данных
+df = df.drop(columns = ['total'])#удаляет колонки, также может удалять строки
+print(df['YEAR'].dtype)
+print(df.head(20))
+print(table)

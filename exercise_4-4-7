@@ -1,0 +1,17 @@
+import pandas as pd 
+
+table_1 = pd.read_csv(r'Pandas\flights_task.csv')
+df = pd.DataFrame(table_1)
+
+dict_ = {('MONTH','YEAR','STATE') : ('JAN', 2020,'Italy')}
+
+#watch_Italy = df[df['Italy'] == dict_.keys()[0][0]]
+k_list_ = list(dict_.keys())[0] # извлекаем первый элемент из списка, внутри списка он является кортежем
+value_list_ = list(dict_.values())[0]
+
+watch_ = True # Логическая маска, элементы в ней pd.Series
+for i in range(len(k_list_)):
+	watch_ &= (df[k_list_[i]] == value_list_[i])
+
+watch_Italy = df[watch_]
+print(watch_Italy.size)

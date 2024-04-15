@@ -1,0 +1,13 @@
+import pandas as pd 
+
+table_1 = pd.read_csv(r'Pandas\flights_task.csv')
+df = pd.DataFrame(table_1)
+
+values = df['ARR'].between(100, 200)
+
+counter_values = 0
+for i in values:
+	if i is True:
+		counter_values += 1
+
+print(counter_values)

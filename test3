@@ -1,0 +1,10 @@
+import pandas as pd
+data = pd.read_csv(r'Pandas\europe_flights.csv', 
+				   na_values = 'н/д')
+
+
+print(data, data.shape, data.dtypes)
+
+df = data.iloc[0:5, [4, 5]]
+
+print(df)

@@ -1,0 +1,12 @@
+import pandas as pd 
+
+table = pd.read_csv(r'Pandas\flights_task.csv')
+df = pd.DataFrame(table)
+
+index_ = df.iloc[::2].index
+df = df.drop(index_)#то, что ниже тоже работает правильно
+#df = df.drop(df.index[::2])
+df['total_arrived'] = df['ARR'].sum(axis = 0)
+arrived = df['total_arrived'][1]
+print(arrived)
+#print(df.head(10))

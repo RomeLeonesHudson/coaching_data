@@ -1,0 +1,10 @@
+import pandas as pd 
+
+table_1 = pd.read_csv(r'Pandas\flights_task.csv')
+df = pd.DataFrame(table_1)
+
+list_months = ('JUN', 'JUL', 'AUG')
+
+air_Spain = df[(df['STATE'] == 'Spain') & (~df['MONTH'].isin(list_months))]
+
+print(air_Spain.shape[0])

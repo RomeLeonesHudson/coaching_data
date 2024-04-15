@@ -1,0 +1,10 @@
+import pandas as pd 
+
+table = pd.read_csv(r'Pandas\flights_task.csv')
+df = pd.DataFrame(table)
+
+airport_France = df[df['STATE'] == 'France']
+#airport_France['flights'] = airport_France[['DEP', 'ARR']].sum(axis = 1)
+flights = (airport_France['DEP'] + airport_France['ARR']).sum()
+#print(airport_France)
+print(flights)

@@ -1,0 +1,10 @@
+sex	race	age	n_persons	median_weekly_earn
+Women	White	16-24	3225000	599
+Women	White	25-54	25749000	939
+Women	White	>=55	8510000	993
+Women	Black	16-24	624000	559
+Women	Black	25-54	5399000	802
+Women	Black	>=55	1490000	853
+Women	Asian	16-24	187000	833
+Women	Asian	25-54	2449000	1165
+Women	Asian	>=55	648000	958

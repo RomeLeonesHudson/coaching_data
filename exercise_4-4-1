@@ -1,0 +1,14 @@
+import pandas as pd
+
+table = pd.read_csv(r'Pandas\flights_task.csv', header = 0)
+df = pd.DataFrame(table)
+
+df_Italy = df[(df['STATE'] == 'Italy') & (df['DEP'] > 400)]
+df_dep_arr = df[((df['DEP'] > 400) + (df['ARR'] > 400)) | (df['YEAR'] == 2019)]
+list_of_apt = ['Venice (LIPZ)',
+               'Dresden (EDDC)',
+               'London - Heathrow (EGLL)']
+
+#print(df_Italy)
+#print(df_dep_arr)
+print(df[df['APT_CODE'].isin(list_of_apt)])
